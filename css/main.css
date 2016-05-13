@@ -1,13 +1,32 @@
-html,
+@font-face {
+    font-family: 'Starjhol';
+    src: url('../star_jedi/starjedi/Starjhol.ttf');
+    src: url('../star_jedi/starjedi/Starjhol.ttf') format('truetype');
+}
+
+
+
+
 
 body {
+
   font-family: sans-serif;
   font-size: 16px;
   text-align: center;
+  background-image: url('../Img/spaceFlight.gif');
+  background-repeat: no-repeat;
+  background-size: 100% 850px;
+
+
+
+
 
 }
 
 
+
 h1 {
-  color: green;
+  font-family: "Starjhol";
+  font-size: 30px;
+  color: red;
 }
