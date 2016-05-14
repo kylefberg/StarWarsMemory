@@ -5,9 +5,6 @@
 }
 
 
-
-
-
 body {
 
   font-family: sans-serif;
@@ -16,12 +13,37 @@ body {
   background-image: url('../Img/spaceFlight.gif');
   background-repeat: no-repeat;
   background-size: 100% 850px;
-
-
-
-
-
 }
+
+.group1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.group2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.group3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/*#jawa0 {
+  height: 150px;
+  width: 50px;
+}*/
+
 
 
 
