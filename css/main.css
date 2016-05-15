@@ -48,3 +48,12 @@ h1 {
   font-size: 50px;
   color: red;
 }
+
+
+.buttons {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin; 1em;
+
+}
