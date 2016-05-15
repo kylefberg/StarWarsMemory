@@ -15,7 +15,10 @@ body {
   background-size: 100% 850px;
 }
 
-
+#timer {
+  color: white;
+  text-align: right;
+}
 
 .group1 {
   display: flex;
