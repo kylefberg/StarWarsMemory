@@ -15,6 +15,8 @@ body {
   background-size: 100% 850px;
 }
 
+
+
 .group1 {
   display: flex;
   justify-content: space-around;
@@ -31,13 +33,7 @@ body {
   flex-wrap: wrap;
 }
 
-.group3 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+
 
 /*#jawa0 {
   height: 150px;
@@ -49,6 +45,6 @@ body {
 
 h1 {
   font-family: "Starjhol";
-  font-size: 30px;
+  font-size: 50px;
   color: red;
 }
