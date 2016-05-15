@@ -12,17 +12,17 @@ var resetGame = function(){
 }
 
 
-  // Setting up the timer with a countdown of 45 seconds
+  // Setting up the timer with a countdown of 30 seconds
 function timer() {
   count=count -1;
-  if (count <= 0) {
-    clearInterval(counter, endGame);
+  if (count <= -1) {
+    clearTimeout(timer, endGame);
     return;
   }
   document.getElementById("timer").innerHTML=count + " sec";
 }
 
-var count=45;
+var count=31;
 var counter=setInterval(timer, 1000);
 
 

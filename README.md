@@ -6,7 +6,7 @@ The challenge is that you have to accomplish this task in under 45 seconds.
 You start by clicking the start button at the bottom of the page.
 This will start the game and the timer so no time to waste.
 
-If you can match all the cards in under 45 seconds you Win!
+If you can match all the cards in under 30 seconds you Win!
 If the clock runs out you lose!
 
 If you would like to play again, just hit the reset button,
