@@ -25,7 +25,7 @@ body {
 .box {
   border: 2px solid white;
   margin-right: 25px;
-  margin-left: 1035px;
+  margin-left: 1072px;
   text-align: center;
 }
 
@@ -45,14 +45,53 @@ h2 {
   margin: 0px;
 }
 
+
+
+.jawa0 {
+  background: url(../img/leah.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: center;
+}
+.jawa1 {
+  background: url(../img/chewieModel.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.jawa2 {
+  background: url(../img/hansSolo.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.jawa3 {
+  background: url(../img/stInToilet.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.jawa4 {
+  background: url(../img/LukeVneck.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.jawa5 {
+  background: url(../img/STshooting.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.jawa6 {
+  background: url(../img/stInToilet.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
 .group1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-
-
 }
 
 .group2 {

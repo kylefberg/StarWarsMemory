@@ -1,15 +1,42 @@
 
-var startGame = function(){
   // start clock
   // make cards clickable
+var startGame = function() {
+  gameWon     = false;
+  openJawa    = [0, 1, 2, 3, 4, 5,
+                 6, 7, 8, 9, 10, 11];
+  closedJawa  = [];
+  jawas       = undefined;
 
-}
+  startGame();
+};
 
-var resetGame = function(){
+
   // reset clock
   // flip cards over
   // shuffle cards
-}
+var resetGame = function(){
+  endGame     = true;
+  openJawas   = [];
+  closedJawas = [0, 1, 2, 3, 4, 5,
+                 6, 7, 8, 9, 10, 11];
+  endGame();
+};
+
+// BEHAVIOR
+var move = function(sandCrawlerIndex) {
+  sandCrawler[jawaIndex] = currentPlayer;
+
+};
+
+  // RULES TO WIN
+var gameWon = function() {
+  if ("hansSolo") === ("hansSolo") {
+    hold in open position, start new round;
+      else turn back over and start new round;
+    }
+
+
 
 
   // Setting up the timer with a countdown of 30 seconds
@@ -28,39 +55,20 @@ function timer() {
   } else {
     setTimeout(timer, 1000);
   }
-}
+};
 
 
-// var countdown = {
-//   count: 30,
-//   timerId: null,
-//   start: function() {
-//     this.timerId = setInterval(()) => {
-//       this.count--;
-//       console.log(this.count);
-//     }, 1000);
-//   },
-//   stop: function() {
-//     console.log(this);
-//     clearInterval(this.timerId);
-//   }
-// };
 
 // My array of jawas.
-var sandCrawler = [
-  "jawa0", "jawa1", "jawa2", "jawa3", "jawa4", "jawa5", "jawa6"];
+var classArray = [
+  "jawa0", "jawa1", "jawa2", "jawa3", "jawa4", "jawa5",];
 
+// My board
+var sandCrawler = [null, null, null, null, null, null, null, null, null, null, null, null];
 
-var board = [null, null, null, null, null, null, null, null, null, null, null, null]; {
-  fipped: false;
-  className: "jawa0";
-}
 
 // Event Listeners
 startButton.addEventListener("click", timer);
-
-
-
 resetButton.addEventListener("click", resetGame);
 
 
