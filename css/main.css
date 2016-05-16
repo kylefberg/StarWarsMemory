@@ -18,13 +18,21 @@ body {
 #timer {
   color: white;
   text-align: right;
-  font-size: 25px;
+  font-size: 20px;
   margin-right:25px
 }
 
+.box {
+  border: 2px solid white;
+  margin-right: 25px;
+  margin-left: 1035px;
+  text-align: center;
+}
+
+
 h1 {
   font-family: "Starjhol";
-  font-size: 70px;
+  font-size: 60px;
   color: red;
   margin: 0px;
 
@@ -32,7 +40,7 @@ h1 {
 
 h2 {
   font-family: "Starjhol";
-  font-size: 45px;
+  font-size: 35px;
   color: red;
   margin: 0px;
 }
@@ -43,6 +51,8 @@ h2 {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+
+
 }
 
 .group2 {
@@ -52,8 +62,6 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-
 
 
 
