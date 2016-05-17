@@ -8,6 +8,9 @@ var classArray = [
 // My board
 var board = [];
 
+var choice1;
+var choice2;
+
 var gameWon = null;
 
 function makeBoard() {
@@ -44,20 +47,34 @@ var resetGame = function(){
 // BEHAVIOR
 // $(this).toggleClass('flip');
 
+var matched = function(var1, var2) {
+  if (board[var1] === board[var2]) {
+    console.log("YAAAA!")
+  } else {
+    console.log("crap...");
+  }
+}
+
+function setChoice(index) {
+  if (choice1 === undefined) {
+    choice1 = index;
+  } else if (choice2 === undefined) {
+    choice2 = index;
+    matched(choice1, choice2);
+  }
+}
 
 $('.board').on("click", ".card", function() {
   var flipped = $(this).toggleClass("flipped");
   console.log(board[this.id.substring(4)]);
   $(this).removeClass("back-red").addClass(board[this.id.substring(4)]);
 
+
 // Var rules on if two selected cards match + no other cards can be selected
-  var matched = function() {
-    if (board[this.id.substring(4)].is(board[this.id.subtring(4)])) {
-      $.addClass("matched");
-    } else {
-      return;
-    }
-  }
+  //Possibly work on a for loop to deturmine if it is a match.
+
+
+
 });
 
 
