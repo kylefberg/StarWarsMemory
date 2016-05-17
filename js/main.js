@@ -21,18 +21,24 @@ function makeBoard() {
   // make cards clickable
 var startGame = function() {
   gameWon     = false;
+  makeBoard();
 
 };
 
+var winGame = function() {
+  opencell  = [""];
+  closedcell= [0, 1, 2, 3, 4, 5,
+               6, 7, 8, 9, 10, 11];
+}
 
   // reset clock
   // flip cards over
   // shuffle cards
 var resetGame = function(){
   endGame     = true;
-  opencell    = [];
-  closedcell  = [0, 1, 2, 3, 4, 5,
+  opencell    = [0, 1, 2, 3, 4, 5,
                  6, 7, 8, 9, 10, 11];
+  closedcell  = [""]
 
 };
 
@@ -42,24 +48,28 @@ var resetGame = function(){
 
 
 $('.board').on("click", ".card", function() {
-  $(this).toggleClass("flipped");
-  var flipped = $(".flipped").not(".matched");
+  var flipped = $(this).toggleClass("flipped");
+console.log(this);
+$(this).removeClass("back-red").addClass(this.name);
+console.log(this.name);
+})
 
-  if (flipped.length === 2) {
-    var firstCell  = flipped.first();
-    var secondCell = flipped.last();
-  } else if ( firstCell.text() === secondCell.text() ) {
-      firstCell.addClass("matched");
-      secondCell.addClass("matched");
-      ($(this).hasClass("matched"))
-      return;
-  } else {
-      firstCell.removeClass("flipped");
-      secondCell.removeClass("flipped");
-      setTimeout(timer, 1000);
-    }
-  }
-)
+
+//   if (flipped.length === 2) {
+//     var firstCell  = flipped.first();
+//     var secondCell = flipped.last();
+//   } else if ( firstCell === secondCell ) {
+//       firstCell.addClass("matched");
+//       secondCell.addClass("matched");
+//       ($(this).hasClass("matched"))
+//       return;
+//   } else {
+//       firstCell.removeClass("flipped");
+//       secondCell.removeClass("flipped");
+//       setTimeout(timer, 1000);
+//     }
+//   }
+// )
 
   // Setting up the timer with a countdown of 30 seconds
     // clearTimeout(timer, endGame);
