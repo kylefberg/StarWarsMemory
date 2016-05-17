@@ -1,14 +1,32 @@
+// My array of jawas.
+var classArray = [
+  "cell0", "cell1", "cell2", "cell3", "cell4", "cell5",
+  "cell0", "cell1", "cell2", "cell3", "cell4", "cell5"
+];
+
+
+// My board
+var board = [];
+
+var gameWon = null;
+
+
+function makeBoard() {
+  var shuffled = _.shuffle(classArray);
+  for (var i = 0; i < 12; i++) {
+    board.push(shuffled.pop());
+  }
+}
 
   // start clock
   // make cards clickable
 var startGame = function() {
   gameWon     = false;
-  openJawa    = [0, 1, 2, 3, 4, 5,
-                 6, 7, 8, 9, 10, 11];
-  closedJawa  = [];
-  jawas       = undefined;
+  // opencell    = [0, 1, 2, 3, 4, 5,
+  //                6, 7, 8, 9, 10, 11];
+  // closedcell  = [];
 
-  startGame();
+  // startGame();
 };
 
 
@@ -17,40 +35,50 @@ var startGame = function() {
   // shuffle cards
 var resetGame = function(){
   endGame     = true;
-  openJawas   = [];
-  closedJawas = [0, 1, 2, 3, 4, 5,
+  opencell    = [];
+  closedcell  = [0, 1, 2, 3, 4, 5,
                  6, 7, 8, 9, 10, 11];
-  endGame();
+  // endGame();
 };
+
 
 // BEHAVIOR
-var move = function(sandCrawlerIndex) {
-  sandCrawler[jawaIndex] = currentPlayer;
+// $(this).toggleClass('flip');
+$('.board').on("click", ".card", function() {
+  $(this).toggleClass("flipped");
+  var flipped = $(".flipped").not(".matched");
 
-};
+  if (flipped.length === 2) {
+    var firstCell  = flipped.first();
+    var secondCell = flipped.last();
+  } else if ( firstCell.text() === secondCell.text() ) {
+      firstCell.addClass("matched");
+      secondCell.addClass("matched");
+      ($(this).hasClass("matched"))
+      return;
+  } else {
+      firstCell.removeClass("flipped");
+      secondCell.removeClass("flipped");
+      setTimeout(timer, 1000);
+    }
+  }
+)
+
 
   // RULES TO WIN
-var gameWon = function() {
-  if ("hansSolo") === ("hansSolo") {
-    hold in open position, start new round;
-      else turn back over and start new round;
-    }
-
+// var gameWon = function() {
+//
 
 
 
   // Setting up the timer with a countdown of 30 seconds
-  // Trying to write code that makes the countdown start on
-  // the start click.
-// $(function() {
-  // });
+    // clearTimeout(timer, endGame);
 var count=31;
 
 function timer() {
   count -= 1;
   $("#timer").text(count + " sec");
   if (count <= 0) {
-    // clearTimeout(timer, endGame);
     return;
   } else {
     setTimeout(timer, 1000);
@@ -59,12 +87,6 @@ function timer() {
 
 
 
-// My array of jawas.
-var classArray = [
-  "jawa0", "jawa1", "jawa2", "jawa3", "jawa4", "jawa5",];
-
-// My board
-var sandCrawler = [null, null, null, null, null, null, null, null, null, null, null, null];
 
 
 // Event Listeners
@@ -77,24 +99,9 @@ resetButton.addEventListener("click", resetGame);
 // cards and compaires a match.
 
 // $(.sandCrawler).on("click", function()) {
-// $(this).toggleClass('flip');
 // }
 
 
-
-
-
-// var sandCrawler = document.querySelectorAll("jawa");
-// jawa[0].addEventListener("click");
-// jawa[1].addEventListener("click");
-// jawa[2].addEventListener("click");
-// jawa[3].addEventListener("click");
-// jawa[4].addEventListener("click");
-// jawa[5].addEventListener("click");
-// jawa[6].addEventListener("click");
-// jawa[7].addEventListener("click");
-// jawa[8].addEventListener("click");
-// jawa[9].addEventListener("click");
 
 
 

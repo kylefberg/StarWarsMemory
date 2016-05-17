@@ -47,40 +47,35 @@ h2 {
 
 
 
-.jawa0 {
+.cell0 {
   background: url(../img/leah.jpg);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-image: center;
 }
-.jawa1 {
+.cell1 {
   background: url(../img/chewieModel.jpg);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.jawa2 {
+.cell2 {
   background: url(../img/hansSolo.jpg);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.jawa3 {
+.cell3 {
   background: url(../img/stInToilet.jpg);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.jawa4 {
+.cell4 {
   background: url(../img/LukeVneck.jpg);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.jawa5 {
+.cell5 {
   background: url(../img/STshooting.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.jawa6 {
-  background: url(../img/stInToilet.jpg);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
