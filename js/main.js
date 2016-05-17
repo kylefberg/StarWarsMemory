@@ -10,7 +10,6 @@ var board = [];
 
 var gameWon = null;
 
-
 function makeBoard() {
   var shuffled = _.shuffle(classArray);
   for (var i = 0; i < 12; i++) {
@@ -22,11 +21,7 @@ function makeBoard() {
   // make cards clickable
 var startGame = function() {
   gameWon     = false;
-  // opencell    = [0, 1, 2, 3, 4, 5,
-  //                6, 7, 8, 9, 10, 11];
-  // closedcell  = [];
 
-  // startGame();
 };
 
 
@@ -38,12 +33,14 @@ var resetGame = function(){
   opencell    = [];
   closedcell  = [0, 1, 2, 3, 4, 5,
                  6, 7, 8, 9, 10, 11];
-  // endGame();
+
 };
 
 
 // BEHAVIOR
 // $(this).toggleClass('flip');
+
+
 $('.board').on("click", ".card", function() {
   $(this).toggleClass("flipped");
   var flipped = $(".flipped").not(".matched");
@@ -64,13 +61,6 @@ $('.board').on("click", ".card", function() {
   }
 )
 
-
-  // RULES TO WIN
-// var gameWon = function() {
-//
-
-
-
   // Setting up the timer with a countdown of 30 seconds
     // clearTimeout(timer, endGame);
 var count=31;
@@ -87,19 +77,14 @@ function timer() {
 
 
 
-
-
 // Event Listeners
-startButton.addEventListener("click", timer);
-resetButton.addEventListener("click", resetGame);
+$(startButton).on("click", timer);
+$(resetButton).on("click", resetGame);
 
 
 
-// I will need to write a function connected to the click that holds the
-// cards and compaires a match.
 
-// $(.sandCrawler).on("click", function()) {
-// }
+
 
 
 
