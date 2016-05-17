@@ -49,8 +49,15 @@ $('.board').on("click", ".card", function() {
   console.log(board[this.id.substring(4)]);
   $(this).removeClass("back-red").addClass(board[this.id.substring(4)]);
 
-})
-
+// Var rules on if two selected cards match + no other cards can be selected
+  var match = function() {
+    if (board[this.id.substring(4)].is(board[this.id.subtring(4)])) {
+      $.addClass("match");
+    } else {
+      return;
+    }
+  }
+});
 
 
 
