@@ -22,12 +22,11 @@ function makeBoard() {
 var startGame = function() {
   gameWon     = false;
   makeBoard();
-
 };
 
 var winGame = function() {
-  opencell  = [""];
-  closedcell= [0, 1, 2, 3, 4, 5,
+  var opencell  = [""];
+  var closedcell= [0, 1, 2, 3, 4, 5,
                6, 7, 8, 9, 10, 11];
 }
 
@@ -35,10 +34,8 @@ var winGame = function() {
   // flip cards over
   // shuffle cards
 var resetGame = function(){
-  endGame     = true;
-  opencell    = [0, 1, 2, 3, 4, 5,
-                 6, 7, 8, 9, 10, 11];
-  closedcell  = [""]
+  board = [];
+  makeBoard();
 
 };
 
@@ -49,27 +46,13 @@ var resetGame = function(){
 
 $('.board').on("click", ".card", function() {
   var flipped = $(this).toggleClass("flipped");
-console.log(this);
-$(this).removeClass("back-red").addClass(this.name);
-console.log(this.name);
+  console.log(board[this.id.substring(4)]);
+  $(this).removeClass("back-red").addClass(board[this.id.substring(4)]);
+
 })
 
 
-//   if (flipped.length === 2) {
-//     var firstCell  = flipped.first();
-//     var secondCell = flipped.last();
-//   } else if ( firstCell === secondCell ) {
-//       firstCell.addClass("matched");
-//       secondCell.addClass("matched");
-//       ($(this).hasClass("matched"))
-//       return;
-//   } else {
-//       firstCell.removeClass("flipped");
-//       secondCell.removeClass("flipped");
-//       setTimeout(timer, 1000);
-//     }
-//   }
-// )
+
 
   // Setting up the timer with a countdown of 30 seconds
     // clearTimeout(timer, endGame);

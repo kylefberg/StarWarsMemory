@@ -10,7 +10,7 @@ body {
   font-family: sans-serif;
   font-size: 16px;
   text-align: center;
-  background-image: url('../Img/spaceFlight.gif');
+  background-image: url('../img/space_flight.gif');
   background-repeat: no-repeat;
   background-size: 100% 850px;
 }
@@ -54,27 +54,27 @@ h2 {
   background-image: center;
 }
 .cell1 {
-  background: url(../img/chewieModel.jpg);
+  background: url(../img/chewie_model.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 .cell2 {
-  background: url(../img/hansSolo.jpg);
+  background: url(../img/hans_solo.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 .cell3 {
-  background: url(../img/stInToilet.jpg);
+  background: url(../img/st_in_toilet.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 .cell4 {
-  background: url(../img/LukeVneck.jpg);
+  background: url(../img/luke_v_neck.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 .cell5 {
-  background: url(../img/STshooting.jpg);
+  background: url(../img/st_shooting.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
