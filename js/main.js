@@ -22,6 +22,7 @@ function makeBoard() {
 var startGame = function() {
   gameWon     = false;
   makeBoard();
+  timer();
 };
 
 var winGame = function() {
@@ -50,9 +51,9 @@ $('.board').on("click", ".card", function() {
   $(this).removeClass("back-red").addClass(board[this.id.substring(4)]);
 
 // Var rules on if two selected cards match + no other cards can be selected
-  var match = function() {
+  var matched = function() {
     if (board[this.id.substring(4)].is(board[this.id.subtring(4)])) {
-      $.addClass("match");
+      $.addClass("matched");
     } else {
       return;
     }
@@ -65,7 +66,7 @@ $('.board').on("click", ".card", function() {
     // clearTimeout(timer, endGame);
 var count=31;
 
-function timer() {
+var timer = function() {
   count -= 1;
   $("#timer").text(count + " sec");
   if (count <= 0) {
@@ -78,7 +79,7 @@ function timer() {
 
 
 // Event Listeners
-$(startButton).on("click", timer);
+$(startButton).on("click", startGame);
 $(resetButton).on("click", resetGame);
 
 
