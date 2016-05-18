@@ -10,7 +10,7 @@ var choice1;
 var choice2;
 var matched;
 var matchedCells = [];
-// var unmatchedCells = [];
+var cellsToFlip = [];
 var gameWon = null;
 
 var renderState = function() {
@@ -67,6 +67,8 @@ var setChoice = function(index) {
       matchedCells.push(choice2);
     } else {
       console.log("Try again…");
+      cellsToFlip.push(choice1);
+      cellsToFlip.push(choice2);
     }
 
     // choice1 and choice2 become undefined
@@ -106,7 +108,25 @@ $(resetButton).on("click", resetGame);
 
 // Card click and flip
 $('.board').on("click", ".card", function() {
+  var cellIndex = this.id.substring(4);
+
+  // Flip the card.
   var flipped = $(this).toggleClass("flipped");
-  console.log(board[this.id.substring(4)]);
-  $(this).removeClass("back-red").addClass(board[this.id.substring(4)]);
+  $(this).removeClass("back-red").addClass(board[cellIndex]);
+
+  // Print the card name:
+  console.log(board[cellIndex]);
+
+  // Choose the card in the model.
+  setChoice(cellIndex);
+
+  if (!matched) {
+    // cards flip
+    $("#cell" + cellsToFlip[0]).addClass("back-red");
+    $("#cell" + cellsToFlip[1]).addClass("back-red");
+    cellsToFlip = [];
+  }
+
 });
+
+startGame();
