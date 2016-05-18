@@ -4,11 +4,13 @@ var classArray = [
   "leah", "chewie", "hans", "storm1", "luke", "storm2"
 ];
 
-// My board
+// DATA MODEL
 var board = [];
 var choice1;
 var choice2;
 var matched;
+var matchedCells = [];
+// var unmatchedCells = [];
 var gameWon = null;
 
 var renderState = function() {
@@ -34,11 +36,11 @@ var startGame = function() {
   timer();
 };
 
-var winGame = function() {
-  var opencell  = [];
-  var closedcell= [0, 1, 2, 3, 4, 5,
-                   6, 7, 8, 9, 10, 11];
-};
+// var winGame = function() {
+//   opencell  = [];
+//   closedcell= [0, 1, 2, 3, 4, 5,
+//                6, 7, 8, 9, 10, 11];
+// };
 
 // reset clock
 // flip cards over
@@ -52,33 +54,35 @@ var resetGame = function(){
 // I need this function to repeat clearing choice 1 and 2
 // when no match is found
 var setChoice = function(index) {
-  if (choice1 === undefined) {
+  if (choice1 === undefined) { // if choice1 is UNdefined, then
     choice1 = index;
-  } else if (choice2 === undefined) {
+  } else { // if choice1 is defined, then
     choice2 = index;
-    matched = match(choice1, choice2);
-    // After the second choice it will not take in any more choices
-  } else if (choice1 !== matched && choice2 !== matched) {
-    // No match return cards face down
-    // ({
+    compareChoices();
 
-    // }, 500);
-  } else {
-    // Start new turn
+    if (matched) { // if compare is a match
+      console.log("Matched!");
+      // add these cells to the matched cells:
+      matchedCells.push(choice1);
+      matchedCells.push(choice2);
+    } else {
+      console.log("Try again…");
+    }
+
+    // choice1 and choice2 become undefined
+    choice1 = undefined;
+    choice2 = undefined;
   }
 }
 
-// Rules for match
-var match = function(choice1, choice2) {
+var compareChoices = function() {
+  console.log("Comparing", board[choice1], board[choice2]);
   if (board[choice1] === board[choice2]) {
-    console.log("MATCH!")
-    return true;
+    matched = true;
   } else {
-    console.log("crap...");
-    setTimeout(function() {
-    }
-  )}
-};
+    matched = false;
+  }
+}
 
 // Setting up the timer with a countdown of 30 seconds
 // clearTimeout(timer, endGame);
