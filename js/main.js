@@ -12,6 +12,7 @@ var isMatched;
 var matchedCells = [];
 var cellsToFlip = [];
 var isGameWon = null;
+var count;
 
 function renderState() {
   console.log(
@@ -30,15 +31,8 @@ function makeBoard() {
 
 // Start game, reset board, start timer
 function startGame() {
-  matched = false;
-  makeBoard();
+  count = 31
   timer();
-};
-
-// reset clock
-// flip cards over
-// shuffle cards
-function resetGame(){
   board = [];
   makeBoard();
 };
@@ -98,7 +92,6 @@ function timer() {
 
 // Start/reset game
 $(startButton).on("click", startGame);
-$(resetButton).on("click", resetGame);
 
 // Card click and flip
 $('.board').on("click", ".card", function() {
