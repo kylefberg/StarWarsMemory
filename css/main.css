@@ -1,12 +1,10 @@
 @font-face {
-    font-family: 'Starjhol';
-    src: url('../star_jedi/starjedi/Starjhol.ttf');
-    src: url('../star_jedi/starjedi/Starjhol.ttf') format('truetype');
+  font-family: 'Starjhol';
+  src: url('../star_jedi/starjedi/Starjhol.ttf');
+  src: url('../star_jedi/starjedi/Starjhol.ttf') format('truetype');
 }
 
-
 body {
-
   font-family: sans-serif;
   font-size: 16px;
   text-align: center;
@@ -29,13 +27,11 @@ body {
   text-align: center;
 }
 
-
 h1 {
   font-family: "Starjhol";
   font-size: 60px;
   color: red;
   margin: 0px;
-
 }
 
 h2 {
@@ -45,41 +41,42 @@ h2 {
   margin: 0px;
 }
 
-
-
-.cell0 {
+.leah {
   background: url(../img/leah.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-image: center;
 }
-.cell1 {
+
+.chewie {
   background: url(../img/chewie_model.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.cell2 {
+
+.hans {
   background: url(../img/hans_solo.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.cell3 {
+
+.storm1 {
   background: url(../img/st_in_toilet.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.cell4 {
+
+.luke {
   background: url(../img/luke_v_neck.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.cell5 {
+
+.storm2 {
   background: url(../img/st_shooting.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-
-
 
 .row1 {
   display: flex;
@@ -97,11 +94,9 @@ h2 {
   flex-wrap: wrap;
 }
 
-
 .buttons {
   display: inline-block;
   width: 200px;
   height: 100px;
-  margin; 1em;
-
+  margin: 1em;
 }
