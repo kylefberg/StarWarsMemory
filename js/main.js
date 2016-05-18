@@ -84,7 +84,7 @@ function compareChoices() {
 // clearTimeout(timer, endGame);
 var count = 31;
 
-var timer = function() {
+function timer() {
   count -= 1;
   $("#timer").text(count + " sec");
   if (count <= 0) {
@@ -120,14 +120,17 @@ $('.board').on("click", ".card", function() {
       $("#cell" + cellsToFlip[0]).addClass("back-red");
       $("#cell" + cellsToFlip[1]).addClass("back-red");
       cellsToFlip = [];
-    }, 1000);
+    }, 1200);
   }
 });
 function endGame() {
-  if (matchedCells.length === 12) {
-  alert("You Won!");
+  if (count ===0) {
+    alert("Better Luck Next Time Padawon");
+  } else if (matchedCells.length === 12) {
+      alert("You Won, The Force is Strong in you!");
   }
+};
 
-}
+
 
 startGame();
