@@ -1,16 +1,15 @@
 // My array of cells.
 var classArray = [
   "cell0", "cell1", "cell2", "cell3", "cell4", "cell5",
-  "cell0", "cell1", "cell2", "cell3", "cell4", "cell5"
+  "cell6", "cell7", "cell8", "cell9", "cell10", "cell11"
 ];
 
 
 // My board
 var board = [];
-
 var choice1;
 var choice2;
-
+var matched;
 var gameWon = null;
 
 function makeBoard() {
@@ -23,6 +22,7 @@ function makeBoard() {
   // Start game, reset board, start timer
 var startGame = function() {
   gameWon     = false;
+  matched = false;
   makeBoard();
   timer();
 };
@@ -42,30 +42,39 @@ var resetGame = function(){
 
 };
 
-
 // Choosing two cards.
-// for (var i = 0; i <=11; i++) {
-  function setChoice(index) {
-    if (choice1 === undefined) {
+// I need this function to repeat clearing choice 1 and 2
+// when no match is found
+function setChoice(index) {
+  if (choice1 === undefined) {
       choice1 = index;
-    }  else if (choice2 === undefined) {
-      choice2 = index;
-      matched(choice1, choice2);
-    }
-  };
+  } else if (choice2 === undefined) {
+    choice2 = index;
+    matched = match(choice1, choice2);
+  } else if (choice1 !== matched && choice2 !== matched){
+    $(this).removeClass(board[this.id.substring(4)]).addClass("back-red");
+    } else {
+      (choice1 && choice2 !== undefined);
+  }
+}
+
+// for (var i = 0; i <=11; i++) {
 // }
 
 
 // Rules for match
-var matched = function(var1, var2) {
-  if (board[var1] === board[var2]) {
-    //cards stay in place, no response after first round ends
-    console.log("YAAAA!")
-
+var match = function(choice1, choice2) {
+  if (board[choice1] === board[choice2]) {
+    console.log("MATCH!")
+    return true;
   } else {
     console.log("crap...");
-    //starts choice function over returns cards to face down
+    setTimeout(function() {
 
+    // I need a function that when a match is not found returns card face down.
+    //cards stay in place, no response after first round ends
+    }, 500);
+    return false;
   }
 };
 
