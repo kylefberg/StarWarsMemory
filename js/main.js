@@ -122,9 +122,12 @@ $('.board').on("click", ".card", function() {
 
   if (!matched) {
     // cards flip
-    $("#cell" + cellsToFlip[0]).addClass("back-red");
-    $("#cell" + cellsToFlip[1]).addClass("back-red");
-    cellsToFlip = [];
+    setTimeout(function() {
+      $("#cell" + cellsToFlip[0]).addClass("back-red");
+      $("#cell" + cellsToFlip[1]).addClass("back-red");
+      cellsToFlip = [];
+    }, 1000);
+
   }
 
 });
