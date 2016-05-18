@@ -8,12 +8,12 @@ var classArray = [
 var board = [];
 var choice1;
 var choice2;
-var matched;
+var isMatched;
 var matchedCells = [];
 var cellsToFlip = [];
-var gameWon = null;
+var isGameWon = null;
 
-var renderState = function() {
+function renderState() {
   console.log(
     "Choice 1:", choice1,
     "Choice 2:", choice2,
@@ -21,7 +21,7 @@ var renderState = function() {
   );
 };
 
-var makeBoard = function() {
+function makeBoard() {
   var shuffled = _.shuffle(classArray);
   for (var i = 0; i < 12; i++) {
     board.push(shuffled.pop());
@@ -29,23 +29,16 @@ var makeBoard = function() {
 };
 
 // Start game, reset board, start timer
-var startGame = function() {
-  gameWon = false;
+function startGame() {
   matched = false;
   makeBoard();
   timer();
 };
 
-// var winGame = function() {
-//   opencell  = [];
-//   closedcell= [0, 1, 2, 3, 4, 5,
-//                6, 7, 8, 9, 10, 11];
-// };
-
 // reset clock
 // flip cards over
 // shuffle cards
-var resetGame = function(){
+function resetGame(){
   board = [];
   makeBoard();
 };
@@ -53,18 +46,19 @@ var resetGame = function(){
 // Choosing two cards.
 // I need this function to repeat clearing choice 1 and 2
 // when no match is found
-var setChoice = function(index) {
-  if (choice1 === undefined) { // if choice1 is UNdefined, then
+function setChoice(index) {
+  if (choice1 === undefined) { // if choice1 is Undefined, then
     choice1 = index;
   } else { // if choice1 is defined, then
     choice2 = index;
     compareChoices();
 
-    if (matched) { // if compare is a match
+    if (isMatched) { // if compare is a match
       console.log("Matched!");
       // add these cells to the matched cells:
       matchedCells.push(choice1);
       matchedCells.push(choice2);
+      endGame();
     } else {
       console.log("Try again…");
       cellsToFlip.push(choice1);
@@ -77,12 +71,12 @@ var setChoice = function(index) {
   }
 }
 
-var compareChoices = function() {
+function compareChoices() {
   console.log("Comparing", board[choice1], board[choice2]);
   if (board[choice1] === board[choice2]) {
-    matched = true;
+    isMatched = true;
   } else {
-    matched = false;
+    isMatched = false;
   }
 }
 
@@ -120,16 +114,20 @@ $('.board').on("click", ".card", function() {
   // Choose the card in the model.
   setChoice(cellIndex);
 
-  if (!matched) {
+  if (!isMatched) {
     // cards flip
     setTimeout(function() {
       $("#cell" + cellsToFlip[0]).addClass("back-red");
       $("#cell" + cellsToFlip[1]).addClass("back-red");
       cellsToFlip = [];
     }, 1000);
-
+  }
+});
+function endGame() {
+  if (matchedCells.length === 12) {
+  alert("You Won!");
   }
 
-});
+}
 
 startGame();
