@@ -14,7 +14,6 @@ var cellsToFlip = [];
 var isGameWon = null;
 var count;
 var resetGame;
-var lock;
 
 function renderState() {
   console.log(
@@ -54,7 +53,6 @@ function setChoice(index) {
   if (choice1 === undefined) { // if choice1 is Undefined, then
     choice1 = index;
   } else { // if choice1 is defined, then
-    lock = true;
     choice2 = index;
     compareChoices();
 
@@ -108,15 +106,10 @@ function timer() {
 $(startButton).on("click", startGame);
 // Card click and flip
 $('.board').on("click", ".card", function(evt) {
-  if (lock) {
-    evt.preventDefault();
-    return;
-  }
-
   var cellIndex = this.id.substring(4);
 
   // Flip the card.
-  var flipped = $(this).toggleClass("flipped");
+  $(this).toggleClass("flipped");
   $(this).removeClass("back-red").addClass(board[cellIndex]);
 
   // Print the card name:
@@ -128,11 +121,10 @@ $('.board').on("click", ".card", function(evt) {
   if (!isMatched) {
     // cards flip
     setTimeout(function() {
-      $("#cell" + cellsToFlip[0]).addClass("back-red");
-      $("#cell" + cellsToFlip[1]).addClass("back-red");
+      $("#cell" + cellsToFlip[0]).removeClass().addClass("card back-red xlarge");
+      $("#cell" + cellsToFlip[1]).removeClass().addClass("card back-red xlarge");
       cellsToFlip = [];
-      lock = false;
-    }, 1100);
+    }, 1000);
   }
 });
 function endGame() {
