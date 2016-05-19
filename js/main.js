@@ -94,7 +94,7 @@ function timer() {
   count -= 1;
   $("#timer").text(count + " sec");
   if (count <= 0) {
-    return;
+    endGame();
   } else {
     setTimeout(timer, 1000);
   }
@@ -128,10 +128,10 @@ $('.board').on("click", ".card", function(evt) {
   }
 });
 function endGame() {
-  if (count ===0) {
+  if (count === 0) {
     alert("Better Luck Next Time Padawon");
   } else if (matchedCells.length === 12) {
-    alert("You Won, The Force is Strong in you!");
+    alert("You Won with " + count + " seconds to spare! \n The Force is Strong in you!");
     reset();
   }
 }
