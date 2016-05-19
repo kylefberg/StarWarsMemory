@@ -13,6 +13,7 @@ var matchedCells = [];
 var cellsToFlip = [];
 var isGameWon = null;
 var count;
+var resetGame;
 
 function renderState() {
   console.log(
@@ -36,6 +37,10 @@ function startGame() {
   board = [];
   makeBoard();
 };
+
+function resetGame() {
+  window.location.reload(forceGet);
+}
 
 // Choosing two cards.
 // I need this function to repeat clearing choice 1 and 2
@@ -92,7 +97,7 @@ function timer() {
 
 // Start/reset game
 $(startButton).on("click", startGame);
-
+$(resetButton).on("click", resetGame);
 // Card click and flip
 $('.board').on("click", ".card", function() {
   var cellIndex = this.id.substring(4);
@@ -126,4 +131,4 @@ function endGame() {
 
 
 
-startGame();
+
