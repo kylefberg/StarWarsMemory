@@ -14,6 +14,7 @@ var cellsToFlip = [];
 var isGameWon = null;
 var count;
 var resetGame;
+var gameOver = false;
 
 function renderState() {
   console.log(
@@ -86,6 +87,7 @@ function compareChoices() {
 // Setting up the timer with a countdown of 30 seconds
 // clearTimeout(timer, endGame);
 var count = 31;
+var timerId;
 
 function timer() {
   count -= 1;
@@ -93,7 +95,7 @@ function timer() {
   if (count <= 0) {
     endGame();
   } else {
-    setTimeout(timer, 1000);
+    timerId = setTimeout(timer, 1000);
   }
 };
 
@@ -129,12 +131,19 @@ $('.board').on("click", ".card", function(evt) {
 // End of game function to declare a winner or not
 function endGame() {
   if (count === 0) {
+    $("#lose")[0].play();
     alert("Better Luck Next Time Padawon");
+    clearTimeout(timerId);
+    $('.board').off("click");
   } else if (matchedCells.length === 12) {
+    clearTimeout(timerId);
+    $('.board').off("click");
+    $("#win")[0].play();
     alert("You Won with " + count + " seconds to spare! \n The Force is Strong in you!");
     reset();
   }
 }
+
 
 // Sound effects on each click
 function playLazer() {
