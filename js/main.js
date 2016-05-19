@@ -23,6 +23,7 @@ function renderState() {
   );
 };
 
+// Shuffling the board before each round
 function makeBoard() {
   var shuffled = _.shuffle(classArray);
   for (var i = 0; i < 12; i++) {
@@ -38,25 +39,20 @@ function startGame() {
   makeBoard();
 };
 
-
+// Reset the game (working on not a hard reset)
 $("#resetButton").on("click", function () {
   window.location.reload();
 });
 
 
-
-
-// Choosing two cards.
-// I need this function to repeat clearing choice 1 and 2
-// when no match is found
+// Choosing two cards
 function setChoice(index) {
   if (choice1 === undefined) { // if choice1 is Undefined, then
     choice1 = index;
   } else { // if choice1 is defined, then
     choice2 = index;
+    // compares to see if there is a match
     compareChoices();
-
-
 
 
     if (isMatched) { // if compare is a match
@@ -77,6 +73,7 @@ function setChoice(index) {
   }
 }
 
+// Comparing the two cards to find a match or not
 function compareChoices() {
   console.log("Comparing", board[choice1], board[choice2]);
   if (board[choice1] === board[choice2]) {
@@ -102,12 +99,13 @@ function timer() {
 
 // Event Listeners
 // Start/reset game
-
 $(startButton).on("click", startGame);
+
 // Card click and flip
 $('.board').on("click", ".card", function(evt) {
   var cellIndex = this.id.substring(4);
   playLazer();
+
   // Flip the card.
   $(this).toggleClass("flipped");
   $(this).removeClass("back-red").addClass(board[cellIndex]);
@@ -119,7 +117,7 @@ $('.board').on("click", ".card", function(evt) {
   setChoice(cellIndex);
 
   if (!isMatched) {
-    // cards flip
+    // cards flip back to deck
     setTimeout(function() {
       $("#cell" + cellsToFlip[0]).removeClass().addClass("card back-red xlarge");
       $("#cell" + cellsToFlip[1]).removeClass().addClass("card back-red xlarge");
@@ -127,6 +125,8 @@ $('.board').on("click", ".card", function(evt) {
     }, 1000);
   }
 });
+
+// End of game function to declare a winner or not
 function endGame() {
   if (count === 0) {
     alert("Better Luck Next Time Padawon");
@@ -136,6 +136,7 @@ function endGame() {
   }
 }
 
+// Sound effects on each click
 function playLazer() {
   var rnd = Math.floor(Math.random() * 4);
   $("#lazer" + rnd)[0].play();
