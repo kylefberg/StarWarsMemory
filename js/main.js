@@ -41,6 +41,7 @@ function startGame() {
   makeBoard();
   input = true;
   $("body").css("background-image", "url(img/space_flight.gif)");
+  $("#hyperSpeed")[0].play();
 };
 
 // Reset the game (working on not a hard reset)
