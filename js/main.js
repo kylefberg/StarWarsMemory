@@ -14,6 +14,7 @@ var cellsToFlip = [];
 var isGameWon = null;
 var count;
 var resetGame;
+var lock;
 
 function renderState() {
   console.log(
@@ -38,9 +39,13 @@ function startGame() {
   makeBoard();
 };
 
-function resetGame() {
-  window.location.reload(forceGet);
-}
+
+$("#resetButton").on("click", function () {
+  window.location.reload();
+});
+
+
+
 
 // Choosing two cards.
 // I need this function to repeat clearing choice 1 and 2
@@ -49,8 +54,12 @@ function setChoice(index) {
   if (choice1 === undefined) { // if choice1 is Undefined, then
     choice1 = index;
   } else { // if choice1 is defined, then
+    lock = true;
     choice2 = index;
     compareChoices();
+
+
+
 
     if (isMatched) { // if compare is a match
       console.log("Matched!");
@@ -94,12 +103,16 @@ function timer() {
 };
 
 // Event Listeners
-
 // Start/reset game
+
 $(startButton).on("click", startGame);
-$(resetButton).on("click", resetGame);
 // Card click and flip
-$('.board').on("click", ".card", function() {
+$('.board').on("click", ".card", function(evt) {
+  if (lock) {
+    evt.preventDefault();
+    return;
+  }
+
   var cellIndex = this.id.substring(4);
 
   // Flip the card.
@@ -118,16 +131,19 @@ $('.board').on("click", ".card", function() {
       $("#cell" + cellsToFlip[0]).addClass("back-red");
       $("#cell" + cellsToFlip[1]).addClass("back-red");
       cellsToFlip = [];
-    }, 1200);
+      lock = false;
+    }, 1100);
   }
 });
 function endGame() {
   if (count ===0) {
     alert("Better Luck Next Time Padawon");
   } else if (matchedCells.length === 12) {
-      alert("You Won, The Force is Strong in you!");
+    alert("You Won, The Force is Strong in you!");
+    reset();
   }
-};
+}
+
 
 
 
