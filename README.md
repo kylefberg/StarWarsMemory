@@ -19,8 +19,9 @@ TECHNOLOGIES
 
 The game is designed in HTML, CSS where the page layout and styling take 
 place. JavaScript is the heart of the game where all the functions live.
-I also used some jQuery to simplify some of the JavaScript code. I pushed
-the entire game to GitHub so that my progress could be tracked and each 
+I also used some jQuery to simplify some of the JavaScript code as well as wav files 
+to increase the user experience by adding sound. 
+I pushed the entire game to GitHub so that my progress could be tracked and each 
 step would be saved. I then pushed to GH Pages so the rest of the world could
 enjoy the game and build up their memory.  
 
