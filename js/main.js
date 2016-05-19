@@ -107,7 +107,7 @@ $(startButton).on("click", startGame);
 // Card click and flip
 $('.board').on("click", ".card", function(evt) {
   var cellIndex = this.id.substring(4);
-
+  playLazer();
   // Flip the card.
   $(this).toggleClass("flipped");
   $(this).removeClass("back-red").addClass(board[cellIndex]);
@@ -136,7 +136,10 @@ function endGame() {
   }
 }
 
-
+function playLazer() {
+  var rnd = Math.floor(Math.random() * 4);
+  $("#lazer" + rnd)[0].play();
+}
 
 
 
