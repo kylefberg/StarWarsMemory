@@ -15,6 +15,7 @@ var isGameWon = null;
 var count;
 var resetGame;
 var gameOver = false;
+var input = false;
 
 function renderState() {
   console.log(
@@ -38,6 +39,8 @@ function startGame() {
   timer();
   board = [];
   makeBoard();
+  input = true;
+  $("body").css("background-image", "url(img/space_flight.gif)");
 };
 
 // Reset the game (working on not a hard reset)
@@ -105,12 +108,17 @@ $(startButton).on("click", startGame);
 
 // Card click and flip
 $('.board').on("click", ".card", function(evt) {
+  if (input === true) {
   var cellIndex = this.id.substring(4);
   playLazer();
+  }
+
 
   // Flip the card.
+  if (input === true) {
   $(this).toggleClass("flipped");
   $(this).removeClass("back-red").addClass(board[cellIndex]);
+  }
 
   // Print the card name:
   console.log(board[cellIndex]);

@@ -8,10 +8,11 @@ body {
   font-family: sans-serif;
   font-size: 16px;
   text-align: center;
-  background-image: url('../img/space_flight.gif');
+  background-image: url('../img/space.gif');
   background-repeat: no-repeat;
   background-size: 100% 850px;
 }
+
 
 #timer {
   position: absolute;
