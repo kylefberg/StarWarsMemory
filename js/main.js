@@ -1,4 +1,4 @@
-// My array of cells.
+// My array of cards.
 var classArray = [
   "leah", "chewie", "hans", "storm1", "luke", "storm2",
   "leah", "chewie", "hans", "storm1", "luke", "storm2"
@@ -46,7 +46,7 @@ function startGame() {
 
 // Reset the game (working on not a hard reset)
 $("#resetButton").on("click", function () {
-  window.location.reload();
+    window.location.reload();
 });
 
 
