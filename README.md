@@ -60,11 +60,11 @@ My design started with my common knowledge of the game memory. I started by
 doing several wire frames to get an idea of what I wanted my final project to
 look like.    
 
-![Screenshot](img/design.jpg)   
+  
+![Screenshot](img/design.jpg) ![Screenshot](img/midPlay.jpg) ![Screenshot](img/finalPlay.jpg) 
+  
 
-![Screenshot](img/midPlay.jpg)
 
-![Screenshot](img/finalPlay.jpg)
 
 
 I then wrote over a dozen user stories mapping out the process I planned on using along with breaking each step into bite size pieces. [Trello Link](https://trello.com/b/BDu2GqX6/memory-card-game) I organized 
@@ -78,7 +78,7 @@ When you are ready to get started, simply [Click to Play](http://kylefberg.githu
 ###NEXT STEPS
 
 In my icebox I have several ideas to improve the existing game. Some of those 
-ideas include animations to have the cards more 3D on click. 
+ideas include animations to have the cards more 3D on the flip feature. I also am working on different levels of difficulty where the clock gives you more or less time depending on what level you pick. 
 
 
 
