@@ -49,7 +49,6 @@ $("#resetButton").on("click", function () {
     window.location.reload();
 });
 
-
 // Choosing two cards
 function setChoice(index) {
   if (choice1 === undefined) { // if choice1 is Undefined, then
@@ -58,7 +57,6 @@ function setChoice(index) {
     choice2 = index;
     // compares to see if there is a match
     compareChoices();
-
 
     if (isMatched) { // if compare is a match
       console.log("Matched!");
@@ -71,7 +69,6 @@ function setChoice(index) {
       cellsToFlip.push(choice1);
       cellsToFlip.push(choice2);
     }
-
     // choice1 and choice2 become undefined
     choice1 = undefined;
     choice2 = undefined;
@@ -114,7 +111,6 @@ $('.board').on("click", ".card", function(evt) {
   playLazer();
   }
 
-
   // Flip the card.
   if (input === true) {
   $(this).toggleClass("flipped");
@@ -152,7 +148,6 @@ function endGame() {
     reset();
   }
 }
-
 
 // Sound effects on each click
 function playLazer() {
